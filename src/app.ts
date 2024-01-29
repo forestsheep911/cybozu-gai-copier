@@ -1,8 +1,6 @@
 import TurndownService from 'turndown'
 
 const app = () => {
-  console.log('monkey jumping on the bed.')
-
   function initTurndown() {
     const turndownService = new TurndownService()
 
@@ -126,25 +124,15 @@ const app = () => {
       const mdtext = turndownService.turndown(exportTargetElement.innerHTML)
       // read mdtext to clipboard
       await navigator.clipboard.writeText(mdtext)
-
-      // async function getClipboardData() {
-      //   try {
-      //     const clipboardItems = await navigator.clipboard.read()
-
-      //     for (let i = 0; i < clipboardItems.length; i++) {
-      //       if (clipboardItems[i].types.includes('text/html')) {
-      //         const blob = await clipboardItems[i].getType('text/html')
-      //         const text = await new Response(blob).text()
-      //         const mdtext = turndownService.turndown(text)
-      //         // console.log('The HTML content from the clipboard is:\n', text)
-      //       }
-      //     }
-      //   } catch (err) {
-      //     console.error('Failed to read clipboard contents: ', err)
-      //   }
-      // }
-
-      // getClipboardData()
+      // Change the text of the copy button to "Copied!"
+      copyButton.innerText = 'Copied!'
+      copyButton.disabled = true
+      copyButton.style.backgroundColor = '#45a049'
+      setTimeout(() => {
+        copyButton.innerText = 'Copy'
+        copyButton.disabled = false
+        copyButton.style.backgroundColor = '#4CAF50'
+      }, 1000)
     })
 
     // return the button
