@@ -1,7 +1,7 @@
 {
-  "name": "monkey-xxx-xxx",
+  "name": "monkey-cybozu-gai-copier",
   "version": "0.0.1",
-  "description": "write description here",
+  "description": "copy cybozu gai to clipboard in markdown format",
   "main": "",
   "scripts": {
     "start": "webpack serve --config ./config/webpack.dev.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourname/your-app.git"
+    "url": "git+https://github.com/forestsheep911/cybozu-gai-copier"
   },
   "keywords": [
     "TamperMonkey",
@@ -21,13 +21,14 @@
   "author": "you",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourname/your-app/issues"
+    "url": "https://github.com/forestsheep911/cybozu-gai-copier/issues"
   },
-  "homepage": "https://github.com/yourname/your-app",
+  "homepage": "https://github.com/forestsheep911/cybozu-gai-copier",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@types/tampermonkey": "^4.0.5",
+    "@types/turndown": "^5.0.4",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "babel-loader": "^8.2.4",
@@ -47,5 +48,7 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "turndown": "^7.1.2"
+  }
 }
