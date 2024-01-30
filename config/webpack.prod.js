@@ -17,7 +17,9 @@ module.exports = () => {
     }),
   )
   baseOptions.mode = 'production'
-  // baseOptions.externals = {}
+  baseOptions.externals = {
+    // turndown: 'Turndown',
+  }
 
   return baseOptions
 }

@@ -1,4 +1,9 @@
 import TurndownService from 'turndown'
+// declare global {
+//   interface Window {
+//     TurndownService: typeof import('turndown')
+//   }
+// }
 
 const app = () => {
   function initTurndown() {
@@ -44,13 +49,20 @@ const app = () => {
           'rounded-full',
         ])
         const isNoNeedHead = checkSelfClasses(node as HTMLElement, ['text-sm', 'font-light', 'text-gray-500', 'pb-1'])
+        const isNoNeedHeadTitle = checkPreviousSiblingClasses(node as HTMLElement, [
+          'mt-5',
+          'h-3',
+          'w-3',
+          'flex-none',
+          'rounded-full',
+        ])
         if (isMyQuestion) {
           return '### ' + content
         } else if (isNoNeedHead) {
-          // console.log('isNoNeedHead', node, content)
+          return ''
+        } else if (isNoNeedHeadTitle) {
           return ''
         } else {
-          // console.log('else', node, content)
           return content
         }
       },
@@ -99,9 +111,9 @@ const app = () => {
 
     // add CSS styling to the button
     copyButton.style.position = 'fixed'
-    copyButton.style.bottom = '20px'
+    copyButton.style.bottom = '12px'
     copyButton.style.right = '20px'
-    copyButton.style.padding = '10px'
+    copyButton.style.padding = '6px 10px'
     copyButton.style.backgroundColor = '#4CAF50'
     copyButton.style.color = 'white'
     copyButton.style.border = 'none'
