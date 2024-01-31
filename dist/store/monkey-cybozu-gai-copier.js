@@ -1,13 +1,12 @@
 // ==UserScript==
 // @name                monkey-cybozu-gai-copier
 // @namespace           https://github.com/forestsheep911/cybozu-gai-copier
-// @version             0.0.1
+// @version             0.0.2
 // @description         copy cybozu gai to clipboard in markdown format
 // @author              you
 // @copyright           you
 // @license             MIT
 // @match               https://chatgai.dev.cybozu.co.jp/*
-// @require             
 // @run-at              document-end
 // @supportURL          https://github.com/forestsheep911/cybozu-gai-copier/issues
 // @homepage            https://github.com/forestsheep911/cybozu-gai-copier
@@ -117,7 +116,9 @@ var app = function () {
                     'rounded-full',
                 ]);
                 if (isMyQuestion) {
-                    return '### ' + content;
+                    var lines = content.match(/.{1,44}/g) || [];
+                    var processedContent = lines.join('\n');
+                    return '----\n' + '```\n' + processedContent + '\n```';
                 }
                 else if (isNoNeedHead) {
                     return '';

@@ -1,6 +1,6 @@
 {
   "name": "monkey-cybozu-gai-copier",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "copy cybozu gai to clipboard in markdown format",
   "main": "",
   "scripts": {

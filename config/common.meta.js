@@ -8,7 +8,6 @@ module.exports = {
   copyright: pj.author,
   license: pj.license,
   match: ['https://chatgai.dev.cybozu.co.jp/*'],
-  require: [''],
   'run-at': 'document-end',
   supportURL: pj.bugs.url,
   homepage: pj.homepage,

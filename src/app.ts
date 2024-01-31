@@ -57,7 +57,9 @@ const app = () => {
           'rounded-full',
         ])
         if (isMyQuestion) {
-          return '### ' + content
+          const lines = content.match(/.{1,44}/g) || []
+          const processedContent = lines.join('\n')
+          return '----\n' + '```\n' + processedContent + '\n```'
         } else if (isNoNeedHead) {
           return ''
         } else if (isNoNeedHeadTitle) {
