@@ -33,10 +33,10 @@ module.exports = () => {
       PRODUCTION: false,
       FILENAME: JSON.stringify(`${devBanner.name}.script.js`),
     }),
-    // new HtmlWebpackPlugin({
-    //   template: './public/index.html',
-    //   inject: 'body',
-    // }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      inject: 'body',
+    }),
   )
   baseOptions.devServer = {
     static: [

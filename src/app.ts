@@ -59,7 +59,7 @@ const app = () => {
         if (isMyQuestion) {
           const lines = content.match(/.{1,44}/g) || []
           const processedContent = lines.join('\n')
-          return '----\n' + '```\n' + processedContent + '\n```'
+          return '----\n' + '```\n' + processedContent + '\n```' + '\n----\n'
         } else if (isNoNeedHead) {
           return ''
         } else if (isNoNeedHeadTitle) {
